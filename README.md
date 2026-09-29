@@ -32,9 +32,14 @@ genai-crm-agent/
 ├── eval/
 │   ├── scenarios.py        # the 4 HW1 §3.7 scenarios as eval cases
 │   ├── metrics.py          # before/after metrics collection
-│   └── edge_cases.py       # edge-case detectors + recovery/escalation paths
+│   ├── collect_results.py  # builds eval/results.json + results_table.md from run logs
+│   ├── results.json        # measured before/after metrics (machine-readable)
+│   ├── results_table.md    # side-by-side metrics table (human-readable)
+│   ├── edge_cases.py       # edge-case detectors + recovery/escalation paths
+│   └── runs/               # structured JSONL logs of every agent run
 └── docs/
-    └── architecture.md     # data flow, tools, prompts, data models
+    ├── architecture.md     # data flow, tools, prompts, data models + measured results
+    └── prompt_iteration_log.md  # prompt/harness changes and the evidence behind them
 ```
 
 ## Prerequisites
@@ -62,7 +67,7 @@ Environment variables (all required unless noted):
 | `ODOO_API_KEY`      | Odoo API key — preferred over password (optional)        |
 | `MOONSHOT_API_KEY`  | Moonshot / Kimi API key                                  |
 | `MOONSHOT_BASE_URL` | default `https://api.moonshot.ai/v1`                     |
-| `MOONSHOT_MODEL`    | default `kimi-k2`                                        |
+| `MOONSHOT_MODEL`    | default `kimi-k2.6` (temperature fixed at 1 by the provider) |
 
 ## Running
 
@@ -71,18 +76,20 @@ Environment variables (all required unless noted):
 python seed/seed_data.py
 
 # 2. Run the agent on one opportunity (HITL approval in the terminal)
-python -m agent.run --opportunity "Suncrest Media" --log runs/s1.jsonl
+python -m agent.run --opportunity "Suncrest Media" --log eval/runs/s1.jsonl
 
 # 3. Dry run: analysis + approval, no Odoo writes
 python -m agent.run --opportunity "Vertex Security" --dry-run
 
-# 4. Metrics helpers (see eval/metrics.py)
-python -m eval.metrics --help   # TODO: wire CLI in the eval step
+# 4. Batch eval (auto-approve; every decision logged) + metrics table
+python -m agent.run --opportunity "Suncrest Media" --log eval/runs/s1.jsonl --auto-approve
+# ... repeat for S2-S4, then:
+python eval/collect_results.py   # Odoo creds via ODOO_* env vars; writes results.json
 ```
 
 ## Notes
 
 - `xmlrpc.client` is part of the Python standard library.
 - No credentials are committed; everything sensitive comes from env vars / `.env`.
-- Skeleton status: integration code paths are complete but require live
-  credentials to execute; eval wiring and screenshots are collected in Part A.
+- Status: Part A complete — live runs against Odoo 19.4 SaaS done 2026-09-28/29;
+  see `eval/results_table.md` and `docs/architecture.md` §7 for measured results.

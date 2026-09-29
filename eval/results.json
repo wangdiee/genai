@@ -22,7 +22,7 @@
       "description": "x",
       "stage": "Qualified",
       "field_completeness_pct": 100.0,
-      "activity_count": 8,
+      "activity_count": 2,
       "overdue_now": [
         1
       ]
@@ -82,12 +82,9 @@
       "description": "x",
       "stage": "New",
       "field_completeness_pct": 100.0,
-      "activity_count": 5,
+      "activity_count": 2,
       "overdue_now": [
         2,
-        37,
-        38,
-        39,
         40
       ]
     },
@@ -144,10 +141,9 @@
       "description": "x",
       "stage": "Proposition",
       "field_completeness_pct": 80.0,
-      "activity_count": 3,
+      "activity_count": 2,
       "overdue_now": [
         3,
-        41,
         42
       ]
     },
