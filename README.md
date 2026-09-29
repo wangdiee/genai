@@ -87,6 +87,31 @@ python -m agent.run --opportunity "Suncrest Media" --log eval/runs/s1.jsonl --au
 python eval/collect_results.py   # Odoo creds via ODOO_* env vars; writes results.json
 ```
 
+## Run on your own machine
+
+The repo detects its environment automatically:
+
+- **In the author's sandbox** it calls Moonshot through the installed skill
+  CLI (no API key needed in env).
+- **Anywhere else** it calls Moonshot's OpenAI-compatible API directly —
+  you need your own key from [platform.moonshot.ai](https://platform.moonshot.ai)
+  (or `platform.moonshot.cn`; set `MOONSHOT_BASE_URL` accordingly):
+
+```bash
+git clone https://github.com/wangdiee/genai.git
+cd genai
+pip install -r requirements.txt
+cp .env.example .env   # fill in ODOO_URL / ODOO_DB / ODOO_USER / ODOO_PASSWORD
+                       # + MOONSHOT_API_KEY (+ MOONSHOT_BASE_URL if using .cn)
+set -a; source .env; set +a   # or export the vars your own way
+
+# Dry run first: full analysis, zero Odoo writes
+python -m agent.run --opportunity "Suncrest Media" --dry-run
+```
+
+Odoo writes only happen after you approve each field in the terminal
+(`--auto-approve` skips the prompts; every auto-decision is logged).
+
 ## Notes
 
 - `xmlrpc.client` is part of the Python standard library.

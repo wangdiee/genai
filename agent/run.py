@@ -44,9 +44,51 @@ MAX_REACT_STEPS = 8
 RESULT_SNIPPET_LEN = 600
 
 #: Moonshot chat CLI (handles auth via the stored credential; the raw API
-#: key is never exposed to this process).
+#: key is never exposed to this process). Used when running inside the
+#: author's sandbox; on any other machine the direct API path below is used.
 CHAT_CLI = os.path.expanduser("~/workspace/skills/moonshot/bin/chat.py")
 LLM_TRIES = 4
+
+
+def _call_llm_direct(payload):
+    """POST the chat payload straight to Moonshot's OpenAI-compatible API.
+
+    Fallback for machines without the skill CLI: needs MOONSHOT_API_KEY
+    (and optionally MOONSHOT_BASE_URL, default https://api.moonshot.ai/v1).
+    Returns the assistant message dict.
+    """
+    import urllib.request
+
+    api_key = os.environ.get("MOONSHOT_API_KEY")
+    if not api_key:
+        raise RuntimeError(
+            "No Moonshot credential: set MOONSHOT_API_KEY, or run where the "
+            "moonshot skill CLI is installed."
+        )
+    base = os.environ.get("MOONSHOT_BASE_URL",
+                          "https://api.moonshot.ai/v1").rstrip("/")
+    req = urllib.request.Request(
+        base + "/chat/completions",
+        data=json.dumps(payload, ensure_ascii=False).encode("utf-8"),
+        headers={"Content-Type": "application/json",
+                 "Authorization": f"Bearer {api_key}"},
+        method="POST",
+    )
+    last = None
+    for attempt in range(LLM_TRIES):
+        try:
+            with urllib.request.urlopen(req, timeout=180) as resp:
+                data = json.loads(resp.read().decode("utf-8"))
+            return data["choices"][0]["message"]
+        except Exception as exc:  # noqa: BLE001
+            last = exc
+            if "429" in str(exc) and attempt < LLM_TRIES - 1:
+                time.sleep(30 * (attempt + 1))
+                continue
+            if attempt < LLM_TRIES - 1:
+                time.sleep(5 * (attempt + 1))
+    raise last if isinstance(last, Exception) else RuntimeError(
+        "moonshot direct call failed")
 
 
 def utcnow():
@@ -55,9 +97,10 @@ def utcnow():
 
 # ------------------------------------------------------------ LLM (Moonshot)
 def call_llm(messages, tools=None):
-    """Call Moonshot chat completions via the skill CLI (surrogate auth).
+    """Call Moonshot chat completions.
 
-    Payload is OpenAI-compatible and supports function calling. Retries with
+    Prefers the skill CLI (surrogate auth) when available; otherwise calls
+    the OpenAI-compatible API directly with MOONSHOT_API_KEY. Retries with
     backoff on HTTP 429 (rate limit) and transient transport errors.
     """
     payload = {
@@ -68,6 +111,8 @@ def call_llm(messages, tools=None):
         payload["tools"] = tools
         payload["tool_choice"] = "auto"
     # kimi-k2.6 only accepts temperature=1; omit it (server default).
+    if not os.path.exists(CHAT_CLI):
+        return _call_llm_direct(payload)
     body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
     last = None
     for attempt in range(LLM_TRIES):
