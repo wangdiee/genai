@@ -1,0 +1,237 @@
+{
+  "S1": {
+    "opportunity": "Suncrest Media",
+    "before": {
+      "expected_revenue": 76000.0,
+      "probability": 20.0,
+      "priority": "2",
+      "date_deadline": false,
+      "description": "<div data-oe-version=\"2.0\" data-last-history-commits=\",2370683462021801,3119430652771926\">High-value inbound lead. Requested customer-data integration and an executive ROI estimate. No reply for 18 days; no next action is currently assigned. GenAI opportunity: summarize communications, detect inactivity risk, and recommend a follow-up plan.</div>",
+      "stage": "New",
+      "field_completeness_pct": 80.0,
+      "overdue_activity_ids": [
+        1
+      ],
+      "activity_count": 1
+    },
+    "after": {
+      "expected_revenue": 76000.0,
+      "probability": 50.0,
+      "priority": "2",
+      "date_deadline": "2026-10-15",
+      "description": "x",
+      "stage": "Qualified",
+      "field_completeness_pct": 100.0,
+      "activity_count": 8,
+      "overdue_now": [
+        1
+      ]
+    },
+    "agent": {
+      "elapsed_seconds": 237.9,
+      "tool_calls": 10,
+      "auto_approved": true,
+      "approved_updates": {
+        "expected_revenue": 76000,
+        "stage_id": "Qualified",
+        "probability": 50,
+        "priority": "2",
+        "date_deadline": "2026-10-15"
+      },
+      "approved_activities": [
+        {
+          "activity_type": "Call",
+          "summary": "Re-engage Lena Park — confirm proposal receipt & next steps",
+          "note": "Suncrest confirmed $76k budget and Oct 15 start target (DM: Lena Park). No reply for 18 days. Objective: confirm receipt of formal proposal request, deliver exec ROI estimate, and lock next steps before deadline.",
+          "date_deadline": "2026-09-29"
+        }
+      ]
+    },
+    "overdue_detection_recall": 1.0,
+    "checks": {
+      "detect_overdue_activity": true,
+      "recommend_new_activity": true,
+      "priority_recommended": "2",
+      "priority_expected": "2",
+      "priority_match": true,
+      "after_priority": "2",
+      "after_probability": 50.0,
+      "after_stage": "Qualified"
+    }
+  },
+  "S2": {
+    "opportunity": "Vertex Security",
+    "before": {
+      "expected_revenue": 39000.0,
+      "probability": 15.0,
+      "priority": "2",
+      "date_deadline": false,
+      "description": "<div data-oe-version=\"2.0\" data-last-history-commits=\",1047467625350095,559572352191383\">High-value security analytics inquiry. The CISO requested information, but the discovery call has not been booked and the lead has been inactive for 21 days. Pain point: high-priority leads can remain hidden without consistent follow-up.</div>",
+      "stage": "New",
+      "field_completeness_pct": 80.0,
+      "overdue_activity_ids": [
+        2
+      ],
+      "activity_count": 1
+    },
+    "after": {
+      "expected_revenue": 55000.0,
+      "probability": 15.0,
+      "priority": "2",
+      "date_deadline": "2026-09-30",
+      "description": "x",
+      "stage": "New",
+      "field_completeness_pct": 100.0,
+      "activity_count": 5,
+      "overdue_now": [
+        2,
+        37,
+        38,
+        39,
+        40
+      ]
+    },
+    "agent": {
+      "elapsed_seconds": 427.3,
+      "tool_calls": 10,
+      "auto_approved": true,
+      "approved_updates": {
+        "expected_revenue": 55000.0,
+        "date_deadline": "2026-09-30",
+        "description": "High-value security analytics inquiry. Decision maker: Marcus Chen (CISO). Budget range discussed: ~$50-60k annually. Timeline: decision this quarter. Discovery call is overdue; lead inactive for 21 days. Action needed: re-engage and book discovery meeting with infrastructure lead."
+      },
+      "approved_activities": [
+        {
+          "activity_type": "Call",
+          "summary": "Re-engage CISO and book discovery meeting with infrastructure lead",
+          "note": "Marcus Chen (CISO) is the confirmed decision maker; budget ~$50-60k annually. Discovery call is 21 days overdue. Validate that 'decision this quarter' timeline still holds and coordinate the infrastructure lead's attendance for the deep-dive meeting.",
+          "date_deadline": "2026-09-19"
+        }
+      ]
+    },
+    "overdue_detection_recall": 1.0,
+    "checks": {
+      "priority_recommended": "None",
+      "priority_expected": "2",
+      "priority_match": false,
+      "activity_summary": "Re-engage CISO and book discovery meeting with infrastructure lead",
+      "summary_contains": true,
+      "after_priority": "2",
+      "after_probability": 15.0,
+      "after_stage": "New"
+    }
+  },
+  "S3": {
+    "opportunity": "Greenline Energy",
+    "before": {
+      "expected_revenue": 34000.0,
+      "probability": 70.0,
+      "priority": "1",
+      "date_deadline": false,
+      "description": "<div data-oe-version=\"2.0\" data-last-history-commits=\",3852213068214891,3633892814046515,1958899008131764,2633925813860317\">Marketing team attended a webinar and has a clear attribution use case. Initially assigned medium priority despite strong buying signals. GenAI opportunity: extract intent signals and correct inconsistent manual prioritization.</div>",
+      "stage": "Qualified",
+      "field_completeness_pct": 80.0,
+      "overdue_activity_ids": [
+        3
+      ],
+      "activity_count": 1
+    },
+    "after": {
+      "expected_revenue": 34000.0,
+      "probability": 80.0,
+      "priority": "2",
+      "date_deadline": false,
+      "description": "x",
+      "stage": "Proposition",
+      "field_completeness_pct": 80.0,
+      "activity_count": 3,
+      "overdue_now": [
+        3,
+        41,
+        42
+      ]
+    },
+    "agent": {
+      "elapsed_seconds": 195.2,
+      "tool_calls": 11,
+      "auto_approved": true,
+      "approved_updates": {
+        "expected_revenue": null,
+        "probability": 80.0,
+        "priority": "2",
+        "stage_id": "Proposition",
+        "date_deadline": null
+      },
+      "approved_activities": [
+        {
+          "activity_type": "To Do",
+          "summary": "Send draft order form and confirm pilot terms",
+          "note": "Overdue buying-intent review from 2026-09-11. Dana Ruiz explicitly requested a draft order form on 2026-09-18. Send draft order form, confirm pilot start date, and capture onboarding requirements.",
+          "date_deadline": "2026-09-19"
+        }
+      ]
+    },
+    "overdue_detection_recall": 1.0,
+    "checks": {
+      "priority_recommended": "2",
+      "priority_expected": "2",
+      "priority_match": true,
+      "evidence_cites_intent": false,
+      "after_priority": "2",
+      "after_probability": 80.0,
+      "after_stage": "Proposition"
+    }
+  },
+  "S4": {
+    "opportunity": "FreshFork Foods",
+    "before": {
+      "expected_revenue": 24000.0,
+      "probability": 60.0,
+      "priority": "1",
+      "date_deadline": false,
+      "description": "<div data-oe-version=\"2.0\" data-last-history-commits=\",4364846547508462,4273086833438096\">The lead was marked medium priority after a cold call, but recent notes show interest in a five-location pilot. No activity is assigned. GenAI opportunity: detect changed intent from unstructured notes.</div>",
+      "stage": "New",
+      "field_completeness_pct": 80.0,
+      "overdue_activity_ids": [],
+      "activity_count": 0
+    },
+    "after": {
+      "expected_revenue": 24000.0,
+      "probability": 60.0,
+      "priority": "1",
+      "date_deadline": false,
+      "description": "x",
+      "stage": "New",
+      "field_completeness_pct": 80.0,
+      "activity_count": 1,
+      "overdue_now": []
+    },
+    "agent": {
+      "elapsed_seconds": 638.0,
+      "tool_calls": 19,
+      "auto_approved": true,
+      "approved_updates": {
+        "expected_revenue": null,
+        "probability": null,
+        "date_deadline": null,
+        "description": "Scope changed to single-location pilot (from multi-city expansion). Timeline moved to Q1 2027 per customer request. Omar Reyes asked to adjust the proposal. Original: medium priority after cold call. No follow-up activity scheduled."
+      },
+      "approved_activities": [
+        {
+          "activity_type": "Call",
+          "summary": "Align on single-location pilot scope, budget, and timeline",
+          "note": "Confirm: 1) Budget for single-location pilot, 2) Omar Reyes's decision-making authority or identify true decision maker, 3) Specific target date within Q1 2027, 4) Re-evaluate probability and expected revenue after call.",
+          "date_deadline": "2026-10-05"
+        }
+      ]
+    },
+    "overdue_detection_recall": null,
+    "checks": {
+      "recommend_new_activity": true,
+      "probability_reassessed": true,
+      "after_priority": "1",
+      "after_probability": 60.0,
+      "after_stage": "New"
+    }
+  }
+}

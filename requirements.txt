@@ -1,0 +1,3 @@
+# xmlrpc.client is part of the Python standard library.
+requests>=2.31.0          # Moonshot OpenAI-compatible chat API
+python-dotenv>=1.0.0      # optional: load .env in run.py / seed script

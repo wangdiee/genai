@@ -1,0 +1,70 @@
+{
+  "captured_at": "2026-09-28",
+  "opportunities": [
+    {
+      "id": 3,
+      "name": "Customer Data Platform - Suncrest Media",
+      "expected_revenue": 76000.0,
+      "probability": 20.0,
+      "priority": "2",
+      "stage": "New",
+      "date_deadline": false,
+      "description": "<div data-oe-version=\"2.0\" data-last-history-commits=\",2370683462021801,3119430652771926\">High-value inbound lead. Requested customer-data integration and an executive ROI estimate. No reply for 18 days; no next action is currently assigned. GenAI opportunity: summarize communications, detect inactivity risk, and recommend a follow-up plan.</div>",
+      "activities": [
+        {
+          "id": 1,
+          "summary": "OVERDUE - Confirm budget and decision maker",
+          "date_deadline": "2026-09-05",
+          "overdue": true
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Cybersecurity Metrics - Vertex Security",
+      "expected_revenue": 39000.0,
+      "probability": 15.0,
+      "priority": "2",
+      "stage": "New",
+      "date_deadline": false,
+      "description": "<div data-oe-version=\"2.0\" data-last-history-commits=\",1047467625350095,559572352191383\">High-value security analytics inquiry. The CISO requested information, but the discovery call has not been booked and the lead has been inactive for 21 days. Pain point: high-priority leads can remain hidden without consistent follow-up.</div>",
+      "activities": [
+        {
+          "id": 2,
+          "summary": "OVERDUE - Book security discovery call",
+          "date_deadline": "2026-09-08",
+          "overdue": true
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Marketing Attribution - Greenline Energy",
+      "expected_revenue": 34000.0,
+      "probability": 70.0,
+      "priority": "1",
+      "stage": "Qualified",
+      "date_deadline": false,
+      "description": "<div data-oe-version=\"2.0\" data-last-history-commits=\",3852213068214891,3633892814046515,1958899008131764,2633925813860317\">Marketing team attended a webinar and has a clear attribution use case. Initially assigned medium priority despite strong buying signals. GenAI opportunity: extract intent signals and correct inconsistent manual prioritization.</div>",
+      "activities": [
+        {
+          "id": 3,
+          "summary": "TODAY - Review buying-intent signals",
+          "date_deadline": "2026-09-11",
+          "overdue": true
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Restaurant Location Analytics - FreshFork Foods",
+      "expected_revenue": 24000.0,
+      "probability": 60.0,
+      "priority": "1",
+      "stage": "New",
+      "date_deadline": false,
+      "description": "<div data-oe-version=\"2.0\" data-last-history-commits=\",4364846547508462,4273086833438096\">The lead was marked medium priority after a cold call, but recent notes show interest in a five-location pilot. No activity is assigned. GenAI opportunity: detect changed intent from unstructured notes.</div>",
+      "activities": []
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{"scenario": "s1", "opp_id": 3, "current_stage": "Qualified"}
+{"scenario": "s1", "write": "update_opportunity_fields", "result": "skipped (no diff)"}
+{"scenario": "s1", "write": "create_followup_activity", "summary": "Re-engage Lena Park — confirm proposal receipt & next steps", "result": {"ok": true, "activity_id": 36, "opp_id": 3}}
+{"scenario": "s2", "opp_id": 6, "current_stage": "New"}
+{"scenario": "s2", "write": "update_opportunity_fields", "fields": {"description": "High-value security analytics inquiry. Decision maker: Marcus Chen (CISO). Budget range discussed: ~$50-60k annually. Timeline: decision this quarter. Discovery call is overdue; lead inactive for 21 days. Action needed: re-engage and book discovery meeting with infrastructure lead."}, "result": {"ok": true, "opp_id": 6, "updated_fields": ["description"]}}
+{"scenario": "s2", "write": "create_followup_activity", "summary": "Re-engage CISO and book discovery meeting with infrastructure lead", "result": {"ok": true, "activity_id": 40, "opp_id": 6}}
+{"scenario": "s3", "opp_id": 10, "current_stage": "Qualified"}
+{"scenario": "s3", "write": "update_opportunity_fields", "fields": {"probability": 80.0, "priority": "2", "stage_id": "Proposition"}, "result": {"ok": true, "opp_id": 10, "updated_fields": ["priority", "probability", "stage_id"]}}
+{"scenario": "s3", "write": "create_followup_activity", "summary": "Send draft order form and confirm pilot terms", "result": {"ok": true, "activity_id": 42, "opp_id": 10}}
+{"scenario": "s4", "opp_id": 7, "current_stage": "New"}
+{"scenario": "s4", "write": "update_opportunity_fields", "fields": {"description": "Scope changed to single-location pilot (from multi-city expansion). Timeline moved to Q1 2027 per customer request. Omar Reyes asked to adjust the proposal. Original: medium priority after cold call. No follow-up activity scheduled."}, "result": {"ok": true, "opp_id": 7, "updated_fields": ["description"]}}
+{"scenario": "s4", "write": "create_followup_activity", "summary": "Align on single-location pilot scope, budget, and timeline", "result": {"ok": true, "activity_id": 43, "opp_id": 7}}

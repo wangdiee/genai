@@ -1,0 +1,21 @@
+Subject: Re: FreshFork expansion proposal
+From: Omar Reyes <omar.reyes@freshfork.example>
+To: sales@debbywang.example
+Date: 2026-09-22
+
+Hi,
+
+Quick update on our side: we're putting the multi-city expansion on hold
+for now. Instead we'd like to start with a single-location pilot in Q1
+and revisit the full rollout after that.
+
+Can we adjust the proposal to the smaller pilot scope? Timeline moved to
+Q1 2027.
+
+Thanks,
+Omar
+
+---
+Internal note (2026-09-28): Purchase intent changed (expansion -> single
+pilot, timeline pushed to Q1 2027). No follow-up activity scheduled yet —
+CRM still shows the original expansion scope and probability.

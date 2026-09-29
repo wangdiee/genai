@@ -1,0 +1,10 @@
+Meeting notes — Vertex Security intro call (2026-08-28)
+Attendees: Marcus Chen (CISO, decision maker), sales rep.
+
+- Strong interest in the enterprise security bundle; asked for a technical
+  deep dive.
+- Budget range discussed: ~$50-60k annually. Timeline: decision this quarter.
+- ACTION: schedule discovery meeting with their infrastructure lead.
+
+Status (2026-09-27): the discovery meeting has NOT been scheduled yet.
+CRM priority: High.
